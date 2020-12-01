@@ -1,4 +1,8 @@
 {
 	"preset": "ts-jest",
-	"testEnvironment": "node"
+	"testEnvironment": "node",
+	"coverageReporters": [
+		"html",
+		"text"
+	]
 }
