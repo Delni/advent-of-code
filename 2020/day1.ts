@@ -1,11 +1,5 @@
 
-import { getInputFrom } from './utils';
-
-const isNotIndex = (index: number) => (value: unknown, i: number) => i !== index
-const isDefined = (ok?: unknown) => !!ok
-const sum = (total: number, value: number) => total + value
-const times = (total: number, value: number) => total * value
-
+import { getInputFrom, isDefined, isNotIndex, times } from './utils';
 
 export const findFirstCoupleThatSumsTo = (num: number): (entries: number[]) => number[] => {
 	return entries => {
