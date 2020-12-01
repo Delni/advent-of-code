@@ -1,5 +1,5 @@
 
-import { getInputFrom, isDefined, isNotIndex, times } from './utils';
+import { getInputFrom, isDefined, isNotIndex, times } from '../utils';
 
 export const findFirstCoupleThatSumsTo = (num: number): (entries: number[]) => number[] => {
 	return entries => {
