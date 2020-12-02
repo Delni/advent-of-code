@@ -7,17 +7,17 @@ void main() async {
   List<int> input =
       (await new File(path).readAsLines()).map(int.parse).toList();
 
-  print('Day 1 result is ${day1(input)}');
-  print('Day 2 result is ${day2(input)}');
+  print('Day 1.1 result is ${day1_1(input)}');
+  print('Day 1.2 result is ${day1_2(input)}');
 }
 
-int day1(List<int> entries) {
+int day1_1(List<int> entries) {
   return findCoupleThatSumsTo(entries, 2020)
       .first
       .reduce((value, element) => value * element);
 }
 
-int day2(List<int> entries) {
+int day1_2(List<int> entries) {
   return findTrioThatSumsTo(entries, 2020)
       .first
       .reduce((value, element) => value * element);
