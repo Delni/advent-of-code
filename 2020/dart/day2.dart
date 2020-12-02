@@ -3,45 +3,54 @@ import 'utils.dart';
 void main() async {
   final input = (await getInputForDay(2)).toList();
 
-  print('Day 2.1 result is ${day2_1(input)}');
-  print('Day 2.2 result is ${day2_2(input)}');
+  print('Day 2.1 result is \x1B[1;93m${day2_1(input)}\x1B[0m.');
+  print('Day 2.2 result is \x1B[1;93m${day2_2(input)}\x1B[0m.');
 }
 
 int day2_1(List<String> entries) => entries
     .map((entry) {
       final splittedEntry = entry.split(': ');
-      return OTCPPolicy
-          .fromString(splittedEntry.first)
-          .validate(splittedEntry.last);
+      return OTCPPolicy.fromString(splittedEntry.first)
+          .validateNumber(splittedEntry.last);
     })
     .where((ok) => ok)
     .length;
 
-int day2_2(List<String> entries) => 1;
+int day2_2(List<String> entries) => entries
+    .map((entry) {
+      final splittedEntry = entry.split(': ');
+      return OTCPPolicy.fromString(splittedEntry.first)
+          .validatePosition(splittedEntry.last);
+    })
+    .where((ok) => ok)
+    .length;
 
 class OTCPPolicy {
-  int min;
-  int max;
+  int lowConstraint;
+  int highConstraint;
   String character;
 
-  OTCPPolicy({this.min, this.max, this.character});
+  OTCPPolicy({this.lowConstraint, this.highConstraint, this.character});
 
-  bool validate(String password) {
-    int found = password
-      .split('')
-      .where((element) => element == character)
-      .length;
-    return found >= min && found <= max;
+  bool validateNumber(String password) {
+    int found = password.split('')
+        .where((element) => element == character)
+        .length;
+    return found >= lowConstraint && found <= highConstraint;
   }
 
-  @override
-  String toString() =>
-      "OTCP Policy :" + " have $character between $min and $max times.";
+  bool validatePosition(String password) {
+    bool isInFirstPosition = password[lowConstraint - 1] == character;
+    bool isInSecondPostion =password[highConstraint - 1] == character;
+    return isInFirstPosition != isInSecondPostion;
+  }
 
   factory OTCPPolicy.fromString(String entry) {
     final character = entry.split(' ').last;
-    final minMax = entry.split(' ').first.split('-').map(int.parse);
+    final constraints = entry.split(' ').first.split('-').map(int.parse);
     return OTCPPolicy(
-        min: minMax.first, max: minMax.last, character: character);
+        lowConstraint: constraints.first,
+        highConstraint: constraints.last,
+        character: character);
   }
 }
