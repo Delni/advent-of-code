@@ -1,4 +1,4 @@
-import { day1_1, day1_2, findFirstCoupleThatSumsTo, findFirstTrioThatSumsTo } from './day1'
+import { day1_1, day1_2, findFirstCoupleThatSumsTo, findFirstTrioThatSumsTo } from '.'
 
 describe('Advent of Code 2020', () => {
 	describe('Day 1', () => {
