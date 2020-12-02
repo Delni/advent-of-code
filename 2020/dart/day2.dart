@@ -2,9 +2,9 @@ import 'utils.dart';
 
 void main() async {
   final input = (await getInputForDay(2)).toList();
-
-  print('Day 2.1 result is \x1B[1;93m${day2_1(input)}\x1B[0m.');
-  print('Day 2.2 result is \x1B[1;93m${day2_2(input)}\x1B[0m.');
+  print('--------- DAY 02 ---------');
+  printResult('1', day2_1(input));
+  printResult('2', day2_2(input));
 }
 
 int day2_1(List<String> entries) => entries
@@ -33,15 +33,14 @@ class OTCPPolicy {
   OTCPPolicy({this.lowConstraint, this.highConstraint, this.character});
 
   bool validateNumber(String password) {
-    int found = password.split('')
-        .where((element) => element == character)
-        .length;
+    int found =
+        password.split('').where((element) => element == character).length;
     return found >= lowConstraint && found <= highConstraint;
   }
 
   bool validatePosition(String password) {
     bool isInFirstPosition = password[lowConstraint - 1] == character;
-    bool isInSecondPostion =password[highConstraint - 1] == character;
+    bool isInSecondPostion = password[highConstraint - 1] == character;
     return isInFirstPosition != isInSecondPostion;
   }
 

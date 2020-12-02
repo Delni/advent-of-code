@@ -1,10 +1,10 @@
 import 'utils.dart';
 
 void main() async {
-  final input = (await getInputForDay(2)).map(int.parse).toList();
-
-  print('Day 1.1 result is ${day1_1(input)}');
-  print('Day 1.2 result is ${day1_2(input)}');
+  final input = (await getInputForDay(1)).map(int.parse).toList();
+  print('--------- DAY 01 ---------');
+  printResult('1', day1_1(input));
+  printResult('2', day1_2(input));
 }
 
 int day1_1(List<int> entries) {
