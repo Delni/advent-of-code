@@ -1,11 +1,7 @@
-import 'dart:io';
-
-import "package:path/path.dart" show dirname, join;
+import 'utils.dart';
 
 void main() async {
-  final path = join(dirname(Platform.script.path), '../inputs/day1.txt');
-  List<int> input =
-      (await new File(path).readAsLines()).map(int.parse).toList();
+  final input = (await getInputForDay(2)).map(int.parse).toList();
 
   print('Day 1.1 result is ${day1_1(input)}');
   print('Day 1.2 result is ${day1_2(input)}');
