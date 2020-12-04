@@ -65,14 +65,14 @@ class Passport {
               final unit = matches.group(2);
               return unit == 'cm'
                   ? (size >= 150 && size <= 193)
-                  : (size >= 59 && size <= 76);
+                  : unit == 'in' ? (size >= 59 && size <= 76) : false;
             case Fields.hcl:
-              return RegExp(r'#(\d|[a-f]){6}').hasMatch(field.value);
+              return RegExp(r'^#(\d|[a-f]){6}$').hasMatch(field.value);
             case Fields.ecl:
               return ['amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth']
                   .contains(field.value);
             case Fields.pid:
-              return RegExp(r'\d{9}').hasMatch(field.value);
+              return RegExp(r'^\d{9}$').hasMatch(field.value);
             case Fields.cid:
               return true;
             default:
