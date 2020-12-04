@@ -5,10 +5,11 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "dart",
+			"name": "🎯 Advent",
 			"cwd": "2020/dart",
 			"request": "launch",
-			"type": "dart"
+			"type": "dart",
+			"program": "${file}",
 		}
 	]
 }
