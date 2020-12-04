@@ -9,7 +9,7 @@
 Be sure to check out [Advent of Code](adventofcode.com/) website !
 
 ## 2020
-[![Dart](https://img.shields.io/badge/-Dart-%230175C2?style=flat&logo=dart)](./2020/dart/README.MD)
+[![Dart](https://img.shields.io/badge/-Dart-%230175C2?style=flat&logo=dart)](./2020/README.MD)
 
 | 01  | 02  | 03  | 04  | 05  | 06  | 07  | 08  | 09  | 10  | 11  | 12  | 13  | 14  | 15  | 16  | 17  | 18  | 19  | 20  |  21  | 22  | 23  | 24  | 25  |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -19,4 +19,4 @@ Be sure to check out [Advent of Code](adventofcode.com/) website !
 [![TypeScript](https://img.shields.io/badge/-Deno-%23000000?style=flat&logo=deno)](./2019/README.MD)
 | 01  | 02  | 03  | 04  | 05  | 06  | 07  | 08  | 09  | 10  | 11  | 12  | 13  | 14  | 15  | 16  | 17  | 18  | 19  | 20  |  21  | 22  | 23  | 24  | 25  |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-| :star::start: | :star::start: | 
+| :star::star: | :star::star: | 
