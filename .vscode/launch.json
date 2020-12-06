@@ -5,7 +5,7 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "🎯 Advent",
+			"name": "🎯 Advent 2020",
 			"cwd": "2020",
 			"request": "launch",
 			"type": "dart",
