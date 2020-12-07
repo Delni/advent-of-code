@@ -1,3 +1,4 @@
 name: AdventOfCode2020
 dependencies:
   path: any
+  meta: ^1.2.4
