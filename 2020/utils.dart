@@ -33,10 +33,13 @@ class AdventOutput {
   }
 
   void run() async {
-    final separators =
-        List.generate(((width - 8) / 2).floor(), (_) => '-').join();
+    final middle = ((width - 8) / 2).floor();
+    final separators = List.generate(middle, (_) => '-').join();
+
     final title = 'DAY ' + (day > 10 ? '' : '0');
+
     print('$separators $title$day $separators');
+    
     var input = (await getInputForDay(day)).toList();
     if (pipe != null) {
       input = pipe(input);
