@@ -19,7 +19,7 @@ dart run <day>.dart
   - [x] Day 7: [Handy Haversacks](https://adventofcode.com/2020/day/7)
   - [x] Day 8: [Handheld Halting](https://adventofcode.com/2020/day/8)
   - [x] Day 9: [Encoding Error](https://adventofcode.com/2020/day/9)
-  - [ ] Day 10: [-](https://adventofcode.com/2020/day/10)
+  - [ ] Day 10: [Adapter Array](https://adventofcode.com/2020/day/10)
   - [ ] Day 11: [-](https://adventofcode.com/2020/day/11)
   - [ ] Day 12: [-](https://adventofcode.com/2020/day/12)
   - [ ] Day 13: [-](https://adventofcode.com/2020/day/13)
