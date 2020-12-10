@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'utils.dart';
 
 void main() {
@@ -17,29 +19,22 @@ void main() {
         return differences[1] * differences[3];
       },
       part2: (entries) {
-        entries.sort();
-        final max = entries.last;
-        return entries.map((adapter) {
-          if (adapter == max) {
-            return 0;
+        entries..add(0)..sort();
+        var canBeRemoved = 1;
+        var i = 0;
+        while (i < entries.length) {
+          var j = i;
+          while (j != entries.length - 1 && entries[j+1] - entries[j] == 1) {
+            j++;
           }
-          final possibilities = entries
-              .where((element) =>
-                  [adapter + 1, adapter + 2, adapter + 3].contains(element))
-              .length;
-          if (possibilities == 1) {
-            return 0;
+          if( i != j) {
+            final nb_min = max(0, (j - i - 3));
+            canBeRemoved *= pow(2, j - i -1) - nb_min;
           }
-          return possibilities;
-        }).fold(1, (previousValue, element) => previousValue * element);
+
+          i = j+1;
+        }
+        return canBeRemoved;
       },
       pipe: (input) => input.map(int.parse).toList());
 }
-
-double combinaison(int n, int k) => f(n) / (f(n - k) * f(k));
-
-int f(int i) => (i == 0) ? 1 : i * f(i - 1);
-
-// For each adapter
-// How many next exist ?
-// then multiply it
