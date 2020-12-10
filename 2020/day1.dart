@@ -1,22 +1,16 @@
 import 'utils.dart';
 
 void main() async {
-  final input = (await getInputForDay(1)).map(int.parse).toList();
-  print('--------- DAY 01 ---------');
-  printResult('1', day1_1(input));
-  printResult('2', day1_2(input));
-}
-
-int day1_1(List<int> entries) {
-  return findCoupleThatSumsTo(entries, 2020)
-      .first
-      .reduce((value, element) => value * element);
-}
-
-int day1_2(List<int> entries) {
-  return findTrioThatSumsTo(entries, 2020)
-      .first
-      .reduce((value, element) => value * element);
+  const target = 2020;
+  TypedOutput<int>(
+      day: 1,
+      part1: (entries) => findCoupleThatSumsTo(entries, target)
+          .first
+          .reduce((value, element) => value * element),
+      part2: (entries) => findTrioThatSumsTo(entries, target)
+          .first
+          .reduce((value, element) => value * element),
+      pipe: (input) => input.map(int.parse).toList());
 }
 
 List<List<int>> findCoupleThatSumsTo(List<int> entries, int target) {

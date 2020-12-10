@@ -1,29 +1,21 @@
 import 'utils.dart';
 
 void main() async {
-  final input = (await getInputForDay(2)).toList();
-  print('--------- DAY 02 ---------');
-  printResult('1', day2_1(input));
-  printResult('2', day2_2(input));
+  AdventOutput(
+      day: 2,
+      part1: (entries) => entries
+          .map((e) => e.split(': '))
+          .map((entry) =>
+              OTCPPolicy.fromString(entry.first).validateNumber(entry.last))
+          .where((ok) => ok)
+          .length,
+      part2: (entries) => entries
+          .map((e) => e.split(': '))
+          .map((entry) =>
+              OTCPPolicy.fromString(entry.first).validatePosition(entry.last))
+          .where((ok) => ok)
+          .length);
 }
-
-int day2_1(List<String> entries) => entries
-    .map((entry) {
-      final splittedEntry = entry.split(': ');
-      return OTCPPolicy.fromString(splittedEntry.first)
-          .validateNumber(splittedEntry.last);
-    })
-    .where((ok) => ok)
-    .length;
-
-int day2_2(List<String> entries) => entries
-    .map((entry) {
-      final splittedEntry = entry.split(': ');
-      return OTCPPolicy.fromString(splittedEntry.first)
-          .validatePosition(splittedEntry.last);
-    })
-    .where((ok) => ok)
-    .length;
 
 class OTCPPolicy {
   int lowConstraint;
