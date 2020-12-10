@@ -41,7 +41,7 @@ class TypedOutput<T> {
     print('$separators $title$day $separators');
 
     List<T> input;
-    if (pipe != null && T != String) {
+    if (pipe != null) {
       input = pipe((await getInputForDay(day)).toList());
     } else {
       input = (await getInputForDay(day)).toList() as List<T>;

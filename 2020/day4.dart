@@ -1,21 +1,18 @@
 import 'utils.dart';
 
 void main() async {
-  final input = (await getInputForDay(4)).toList().join('\n').split('\n\n');
-  print('--------- DAY 04 ---------');
-  printResult('1', day4_1(input));
-  printResult('2', day4_2(input));
+  AdventOutput(
+      day: 4,
+      part1: (entries) => entries
+          .map((entry) => Passport.fromString(entry))
+          .where((passport) => passport.requiredFieldsArePresent())
+          .length,
+      part2: (entries) => entries
+          .map((entry) => Passport.fromString(entry))
+          .where((passport) => passport.isValid())
+          .length,
+      pipe: (input) => input.join('\n').split('\n\n'));
 }
-
-int day4_1(List<String> entries) => entries
-    .map((entry) => Passport.fromString(entry))
-    .where((passport) => passport.requiredFieldsArePresent())
-    .length;
-
-int day4_2(List<String> entries) => entries
-    .map((entry) => Passport.fromString(entry))
-    .where((passport) => passport.isValid())
-    .length;
 
 class Passport {
   Map<String, String> fields;
@@ -65,7 +62,9 @@ class Passport {
               final unit = matches.group(2);
               return unit == 'cm'
                   ? (size >= 150 && size <= 193)
-                  : unit == 'in' ? (size >= 59 && size <= 76) : false;
+                  : unit == 'in'
+                      ? (size >= 59 && size <= 76)
+                      : false;
             case Fields.hcl:
               return RegExp(r'^#(\d|[a-f]){6}$').hasMatch(field.value);
             case Fields.ecl:

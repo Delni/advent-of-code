@@ -1,19 +1,20 @@
 import 'utils.dart';
 
 void main() async {
-  final input = (await getInputForDay(5)).toList();
-  print('--------- DAY 05 ---------');
-  printResult('1', day5_1(input));
-  printResult('2', day5_2(input));
+  AdventOutput(
+    day: 5,
+    part1: day5_1,
+    part2: day5_2,
+  );
 }
 
 int day5_1(List<String> entries) {
-  var places = entries
-      .map((b) => Place.fromBoardingPass(b))
-      .map((place) => place.ID)
-      .toList();
-  places.sort();
-  return places.last;
+  return (entries
+          .map((b) => Place.fromBoardingPass(b))
+          .map((place) => place.ID)
+          .toList()
+            ..sort())
+      .last;
 }
 
 int day5_2(List<String> entries) {
