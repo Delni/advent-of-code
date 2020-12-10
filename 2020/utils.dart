@@ -17,14 +17,14 @@ void printResult(String part, dynamic result) {
   print('Part $part result is $ANSI_BOLD_YELLOW$result$ANSI_RESET');
 }
 
-class AdventOutput {
+class TypedOutput<T> {
   static const int width = 42;
   int day;
-  int Function(List<String>) part1;
-  int Function(List<String>) part2;
-  List<String> Function(List<String>) pipe;
+  int Function(List<T>) part1;
+  int Function(List<T>) part2;
+  List<T> Function(List<String>) pipe;
 
-  AdventOutput(
+  TypedOutput(
       {@required this.day,
       @required this.part1,
       @required this.part2,
@@ -39,10 +39,12 @@ class AdventOutput {
     final title = 'DAY ' + (day > 10 ? '' : '0');
 
     print('$separators $title$day $separators');
-    
-    var input = (await getInputForDay(day)).toList();
-    if (pipe != null) {
-      input = pipe(input);
+
+    List<T> input;
+    if (pipe != null && T != String) {
+      input = pipe((await getInputForDay(day)).toList());
+    } else {
+      input = (await getInputForDay(day)).toList() as List<T>;
     }
     final result1 = await Future.microtask(() => part1(input));
     print('Part 1 :'.padRight(width - result1.toString().length) +
@@ -51,4 +53,13 @@ class AdventOutput {
     print('Part 2 :'.padRight(width - result2.toString().length) +
         '$ANSI_BOLD_YELLOW$result2$ANSI_RESET');
   }
+}
+
+class AdventOutput extends TypedOutput<String> {
+  AdventOutput(
+      {@required int day,
+      @required int Function(List<String>) part1,
+      @required int Function(List<String>) part2,
+      List<String> Function(List<String>) pipe})
+      : super(day: day, part1: part1, part2: part2, pipe: pipe);
 }

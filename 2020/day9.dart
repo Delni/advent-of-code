@@ -1,16 +1,14 @@
 import 'utils.dart';
 
 main() {
-  AdventOutput(
+  TypedOutput<int>(
     day: 9,
-    part1: (entries) => firstError(entries.map(int.parse).toList()),
-    part2: (entries) {
-      final codes = entries.map(int.parse).toList();
+    part1: (entries) => firstError(entries),
+    part2: (codes) {
       final errorCode = firstError(codes);
       return rangeToSum(errorCode, codes);
     },
-    // TODO
-    // pipe: (List<String> input) => input.map(int.parse).toList()
+    pipe: (List<String> input) => input.map(int.parse).toList()
   );
 }
 
