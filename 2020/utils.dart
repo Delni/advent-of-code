@@ -46,10 +46,10 @@ class TypedOutput<T> {
     } else {
       input = (await getInputForDay(day)).toList() as List<T>;
     }
-    final result1 = await Future.microtask(() => part1(input));
+    final result1 = await Future.microtask(() => part1(List.from(input)));
     print('Part 1 :'.padRight(width - result1.toString().length) +
         '$ANSI_BOLD_YELLOW$result1$ANSI_RESET');
-    final result2 = await Future.microtask(() => part2(input));
+    final result2 = await Future.microtask(() => part2(List.from(input)));
     print('Part 2 :'.padRight(width - result2.toString().length) +
         '$ANSI_BOLD_YELLOW$result2$ANSI_RESET');
   }
