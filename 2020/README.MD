@@ -21,7 +21,7 @@ dart run <day>.dart
   - [x] Day 9: [Encoding Error](https://adventofcode.com/2020/day/9)
   - [x] Day 10: [Adapter Array](https://adventofcode.com/2020/day/10)
   - [x] Day 11: [Seating System](https://adventofcode.com/2020/day/11)
-  - [ ] Day 12: [-](https://adventofcode.com/2020/day/12)
+  - [ ] Day 12: [Rain Risk](https://adventofcode.com/2020/day/12)
   - [ ] Day 13: [-](https://adventofcode.com/2020/day/13)
   - [ ] Day 14: [-](https://adventofcode.com/2020/day/14)
   - [ ] Day 15: [-](https://adventofcode.com/2020/day/15)
