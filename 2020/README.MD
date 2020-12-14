@@ -23,7 +23,7 @@ dart run <day>.dart
   - [x] Day 11: [Seating System](https://adventofcode.com/2020/day/11)
   - [x] Day 12: [Rain Risk](https://adventofcode.com/2020/day/12)
   - [ ] Day 13: [Shuttle Search](https://adventofcode.com/2020/day/13)
-  - [ ] Day 14: [-](https://adventofcode.com/2020/day/14)
+  - [x] Day 14: [Docking Data](https://adventofcode.com/2020/day/14)
   - [ ] Day 15: [-](https://adventofcode.com/2020/day/15)
   - [ ] Day 16: [-](https://adventofcode.com/2020/day/16)
   - [ ] Day 17: [-](https://adventofcode.com/2020/day/17)
