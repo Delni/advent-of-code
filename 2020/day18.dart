@@ -19,7 +19,7 @@ int elvesMath(String input) {
   while ((matches = group.allMatches(result)).length > 0) {
     matches.forEach((match) {
       result = result.replaceFirst(
-          match.group(0), elfMath(match.group(1)).toString());
+          match.group(0)!, elfMath(match.group(1)!).toString());
     });
   }
 
@@ -32,12 +32,12 @@ int elfMath(String input) {
   RegExp unitOperation = RegExp(r'(\d+) ([\+\*]) (\d+)+');
   while ((matches = unitOperation.allMatches(result)).length > 0) {
     matches.forEach((match) {
-      final firstOperand = int.parse(match.group(1));
-      final secondOperand = int.parse(match.group(3));
+      final firstOperand = int.parse(match.group(1)!);
+      final secondOperand = int.parse(match.group(3)!);
       final calculus = match.group(2) == '+'
           ? firstOperand + secondOperand
           : firstOperand * secondOperand;
-      result = result.replaceFirst(match.group(0), '$calculus');
+      result = result.replaceFirst(match.group(0)!, '$calculus');
     });
   }
   return int.parse(result);

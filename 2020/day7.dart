@@ -29,14 +29,17 @@ Set<Bag> getContainers(String color, List<Bag> bags) {
 }
 
 int getNumberOfBags(Map<String, Bag> bags, String color) {
-  var numberOfChildren = bags[color].contains.fold(0, (total, element) => total + element.amount);
-  return  numberOfChildren + bags[color].contains
+  var numberOfChildren = bags[color]!
+      .contains
+      .fold<int>(0, (total, element) => total + element.amount);
+  return numberOfChildren +
+      bags[color]!.contains
     .fold(0, (total, element) => total + getNumberOfBags(bags, element.color) * element.amount);
 }
 
 class Bag {
-  String color;
-  List<Contain> contains;
+  late String color;
+  late List<Contain> contains;
 
   Bag();
 
@@ -44,11 +47,12 @@ class Bag {
     RegExp bagRegex = RegExp(r'^([\w+\s*]+) bags contain');
     RegExp contains = RegExp(r'((\d) ([\w+\s*]+) bag)+');
     return Bag()
-      ..color = bagRegex.allMatches(nlp).first.group(1)
+      ..color = bagRegex.allMatches(nlp).first.group(1)!
       ..contains = contains
           .allMatches(nlp)
           .map((match) =>
-              Contain(color: match.group(3), amount: int.parse(match.group(2))))
+              Contain(
+              color: match.group(3)!, amount: int.parse(match.group(2)!)))
           .toList();
   }
 }
@@ -56,5 +60,5 @@ class Bag {
 class Contain {
   String color;
   int amount;
-  Contain({this.color, this.amount});
+  Contain({required this.color, required this.amount});
 }

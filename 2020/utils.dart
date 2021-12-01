@@ -1,7 +1,6 @@
 library utils;
 
 import 'dart:io';
-import 'package:meta/meta.dart';
 
 import "package:path/path.dart" show dirname, join;
 
@@ -22,13 +21,14 @@ class TypedOutput<T> {
   int day;
   int Function(List<T>) part1;
   int Function(List<T>) part2;
-  List<T> Function(List<String>) pipe;
+  List<T> Function(List<String>)? pipe;
 
-  TypedOutput(
-      {@required this.day,
-      @required this.part1,
-      @required this.part2,
-      this.pipe}) {
+  TypedOutput({
+    required this.day,
+    required this.part1,
+    required this.part2,
+    this.pipe,
+  }) {
     run();
   }
 
@@ -42,7 +42,7 @@ class TypedOutput<T> {
 
     List<T> input;
     if (pipe != null) {
-      input = pipe((await getInputForDay(day)).toList());
+      input = pipe!((await getInputForDay(day)).toList());
     } else {
       input = (await getInputForDay(day)).toList() as List<T>;
     }
@@ -56,10 +56,10 @@ class TypedOutput<T> {
 }
 
 class AdventOutput extends TypedOutput<String> {
-  AdventOutput(
-      {@required int day,
-      @required int Function(List<String>) part1,
-      @required int Function(List<String>) part2,
-      List<String> Function(List<String>) pipe})
-      : super(day: day, part1: part1, part2: part2, pipe: pipe);
+  AdventOutput({
+    required int day,
+    required int Function(List<String>) part1,
+    required int Function(List<String>) part2,
+    List<String> Function(List<String>)? pipe,
+  }) : super(day: day, part1: part1, part2: part2, pipe: pipe);
 }

@@ -12,10 +12,10 @@ void main() {
           .map(
             (element) => fields
                 .firstWhere((field) => field.invalidCode(element) != null)
-                ?.invalidCode(element),
+                .invalidCode(element),
           )
           .where((e) => e != null)
-          .fold(0, (total, element) => total + element);
+          .fold(0, (total, element) => total + element!);
     },
     part2: (entries) => 1,
     pipe: (input) => input.join('\n').split('\n\n'),
@@ -23,16 +23,16 @@ void main() {
 }
 
 class Ticket {
-  List<int> fields;
+  late List<int> fields;
 }
 
 class Field {
   String name;
   List<int> values;
 
-  Field({this.name, this.values});
+  Field({required this.name, required this.values});
 
-  int invalidCode(List<int> codes) {
+  int? invalidCode(List<int> codes) {
     final invalid = codes.where((element) => !values.contains(element));
     return invalid.length != 0 ? invalid.first : null;
   }
@@ -44,7 +44,7 @@ class Field {
         .allMatches(input)
         .first
         .groups([1, 2, 3, 4])
-        .map((e) => int.parse(e))
+        .map((e) => int.parse(e!))
         .toList();
 
     List<int> values = []

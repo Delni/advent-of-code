@@ -20,10 +20,9 @@ int Function(List<int>) spokenNumberAt(int target) {
     }
     var nextNumber = entries.last;
     for (var i = entries.length + 1; i < target; i++) {
-      final element = spokenNumbers[nextNumber];
-      print(nextNumber);
-      nextNumber = element?.secondLastTime != null
-          ? element.lastTime - element.secondLastTime
+      final element = spokenNumbers[nextNumber]!;
+      nextNumber = element.secondLastTime != null
+          ? element.lastTime - element.secondLastTime!
           : 0;
       spokenNumbers.update(
         nextNumber,
@@ -40,8 +39,8 @@ int Function(List<int>) spokenNumberAt(int target) {
 
 class SpokenNumber {
   int lastTime;
-  int secondLastTime;
-  SpokenNumber({this.lastTime, this.secondLastTime});
+  int? secondLastTime;
+  SpokenNumber({required this.lastTime, this.secondLastTime});
 }
 
 /**
