@@ -31,7 +31,7 @@ class HandHeldConsole {
     _visited = {};
   }
 
-  int run({List<String> instructions}) {
+  int run({required List<String> instructions}) {
     if (_visited.contains(_pointer) || _pointer >= instructions.length) {
       return _accumulator;
     } else {
@@ -56,11 +56,11 @@ class HandHeldConsole {
     return run(instructions: instructions);
   }
 
-  int bootSequence({List<String> instructions}) {
+  int bootSequence({required List<String> instructions}) {
     for (var i = 0; i < instructions.length; i++) {
       reset();
       final instruction = instructions[i];
-      List<String> alteredInstructions;
+      late List<String> alteredInstructions;
       if (instruction.contains('jmp')) {
         alteredInstructions = List.from(instructions.whereType<String>())
           ..replaceRange(i, i+1, [instruction.replaceAll('jmp', 'nop')]);
@@ -68,11 +68,9 @@ class HandHeldConsole {
         alteredInstructions = List.from(instructions.whereType<String>())
           ..replaceRange(i, i+1, [instruction.replaceAll('nop', 'jmp')]);
       }
-      if (alteredInstructions != null) {
-        run(instructions: alteredInstructions);
-        if (_pointer >= instructions.length) {
-          return _accumulator;
-        }
+      run(instructions: alteredInstructions);
+      if (_pointer >= instructions.length) {
+        return _accumulator;
       }
     }
     return _accumulator;

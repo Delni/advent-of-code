@@ -16,7 +16,7 @@ void main() {
           differences.update(diff, (value) => value + 1, ifAbsent: () => diff);
           lastValue = entries[i];
         }
-        return differences[1] * differences[3];
+        return differences[1]! * differences[3]!;
       },
       part2: (entries) {
         entries..add(0)..sort();
@@ -29,7 +29,7 @@ void main() {
           }
           if( i != j) {
             final nb_min = max(0, (j - i - 3));
-            canBeRemoved *= pow(2, j - i -1) - nb_min;
+            canBeRemoved *= (pow(2, j - i - 1) - nb_min) as int;
           }
 
           i = j+1;

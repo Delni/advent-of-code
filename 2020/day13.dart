@@ -13,7 +13,7 @@ main() {
           .where((element) => element.ID != null)
           .toList()
             ..sort(byNextDepartureFrom(departure));
-      return buses.first.ID * buses.first.closestDepartureTo(departure);
+      return buses.first.ID! * buses.first.closestDepartureTo(departure);
     },
     part2: (entries) {
       final buses = entries.last.split(',').map((e) => Bus(e)).toList();
@@ -21,7 +21,7 @@ main() {
       for (var i = 0; i < buses.length; i++) {
         final element = buses[i];
         if (element.ID != null) {
-          rem.add(i == 0 ? 0 : (element.ID - i % element.ID));
+          rem.add(i == 0 ? 0 : (element.ID! - i % element.ID!));
         }
       }
       return chineseRemainder(
@@ -36,7 +36,7 @@ main() {
 }
 
 class Bus {
-  int ID;
+  int? ID;
 
   Bus(String id) {
     if (id != 'x') {
@@ -45,11 +45,11 @@ class Bus {
   }
 
   int closestDepartureTo(int departure) {
-    return ID - departure % ID;
+    return ID! - departure % ID!;
   }
 
   static bool isNotNull(Bus b) => b.ID != null;
-  static BigInt toBigInt(Bus b) => BigInt.from(b.ID);
+  static BigInt toBigInt(Bus b) => BigInt.from(b.ID!);
 
   @override
   String toString() => "Bus ($ID)";

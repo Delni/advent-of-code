@@ -31,5 +31,5 @@ class Slope {
   int right;
   int down;
 
-  Slope({this.right, this.down});
+  Slope({required this.right, required this.down});
 }

@@ -2,14 +2,13 @@ import 'utils.dart';
 
 main() {
   TypedOutput<int>(
-    day: 9,
-    part1: (entries) => firstError(entries),
-    part2: (codes) {
-      final errorCode = firstError(codes);
-      return rangeToSum(errorCode, codes);
-    },
-    pipe: (List<String> input) => input.map(int.parse).toList()
-  );
+      day: 9,
+      part1: (entries) => firstError(entries),
+      part2: (codes) {
+        final errorCode = firstError(codes);
+        return rangeToSum(errorCode, codes);
+      },
+      pipe: (List<String> input) => input.map(int.parse).toList());
 }
 
 int firstError(List<int> codes) {
@@ -21,7 +20,7 @@ int firstError(List<int> codes) {
       return codes[i];
     }
   }
-  return null;
+  return 0;
 }
 
 int rangeToSum(int target, List<int> codes) {
@@ -29,7 +28,7 @@ int rangeToSum(int target, List<int> codes) {
   for (var i = 0; i < codes.length; i++) {
     var sum = 0;
     for (var j = i; j < codes.length - 1; j++) {
-        sum += codes[j];
+      sum += codes[j];
 
       if (sum == target) {
         range = codes.sublist(i, j)..sort();
@@ -39,5 +38,5 @@ int rangeToSum(int target, List<int> codes) {
       }
     }
   }
-  return null;
+  return 0;
 }

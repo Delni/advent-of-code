@@ -13,7 +13,7 @@ class WaitingArea {
   List<String> rows;
   List<String> previousState = [];
 
-  WaitingArea({this.rows, bool longview}) {
+  WaitingArea({required this.rows, required bool longview}) {
     if (longview) {
       runLongview();
     } else {
@@ -99,7 +99,7 @@ class WaitingArea {
 class Surrounding {
   String dir;
   List<int> coords;
-  Surrounding({this.dir, this.coords});
+  Surrounding({required this.dir, required this.coords});
 }
 
 bool Function(Surrounding element) firstInBounds(int min, int max) =>

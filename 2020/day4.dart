@@ -37,7 +37,6 @@ class Passport {
               } catch (e) {
                 return false;
               }
-              break;
             case Fields.iyr:
               try {
                 final year = int.parse(field.value);
@@ -45,7 +44,6 @@ class Passport {
               } catch (e) {
                 return false;
               }
-              break;
             case Fields.eyr:
               try {
                 final year = int.parse(field.value);
@@ -53,12 +51,11 @@ class Passport {
               } catch (e) {
                 return false;
               }
-              break;
             case Fields.hgt:
               final matches =
                   RegExp(r'(\d{1,3})(\w{2})').firstMatch(field.value);
               if (matches == null) return false;
-              final size = int.parse(matches.group(1));
+              final size = int.parse(matches.group(1) ?? '0');
               final unit = matches.group(2);
               return unit == 'cm'
                   ? (size >= 150 && size <= 193)

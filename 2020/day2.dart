@@ -22,7 +22,11 @@ class OTCPPolicy {
   int highConstraint;
   String character;
 
-  OTCPPolicy({this.lowConstraint, this.highConstraint, this.character});
+  OTCPPolicy({
+    required this.lowConstraint,
+    required this.highConstraint,
+    required this.character,
+  });
 
   bool validateNumber(String password) {
     int found =

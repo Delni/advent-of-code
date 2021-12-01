@@ -21,9 +21,7 @@ void main() {
         grid.forEach((cube) {
           final activeNeighbors = cube.neighbors
               .map((e) =>
-                  grid.firstWhere(
-                      (element) => element.isAtTheSameSpotThan(e)) ??
-                  e)
+                  grid.firstWhere((element) => element.isAtTheSameSpotThan(e)))
               .where((element) => element.state)
               .length;
           cube.state = activeNeighbors == 4;

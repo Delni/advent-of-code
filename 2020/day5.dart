@@ -37,7 +37,7 @@ class Place {
   int row;
   int col;
 
-  Place({this.row, this.col});
+  Place({required this.row, required this.col});
 
   @override
   String toString() => "Place $ID ($row - $col)";
