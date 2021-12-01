@@ -4,6 +4,7 @@ plugins {
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 tasks {
@@ -16,4 +17,8 @@ tasks {
     wrapper {
         gradleVersion = "7.3"
     }
+}
+
+dependencies {
+    implementation("com.andreapivetta.kolor:kolor:1.0.0")
 }
