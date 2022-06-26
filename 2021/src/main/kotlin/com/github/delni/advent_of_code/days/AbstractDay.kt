@@ -16,9 +16,7 @@ abstract class AbstractDay(
     abstract fun part1(input: List<String>): Int
     abstract fun part2(input: List<String>): Int
 
-    init {
-        run()
-    }
+    init { run() }
 
 
     private fun run() {
@@ -33,7 +31,7 @@ abstract class AbstractDay(
         }
 
         val input = readInput("Day${DAY}")
-        val emphasizedText = "DAY$DAY : $TITLE".green()
+        val emphasizedText = "DAY$DAY: $TITLE".green()
         val title = "+-------- $emphasizedText --------+"
         val part1Result = part1(input).toString().yellow()
         val part2Result = part2(input).toString().yellow()
