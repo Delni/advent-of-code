@@ -3,7 +3,7 @@ package main
 import "testing"
 
 
-func TestDayOnePartOne(t *testing.T) {
+func TestDay1Part1(t *testing.T) {
 	// Given
 	input := []int{+1, -2, +3, +1} 
 	// When
@@ -16,7 +16,7 @@ func TestDayOnePartOne(t *testing.T) {
 	}
 }
 
-func TestDayOnePartTwo(t *testing.T) {
+func TestDay1Part2(t *testing.T) {
 	// Given
 	input := []int{+1, -2, +3, +1} 
 	// When
