@@ -1,4 +1,4 @@
-# 🎄 Advent of code 2021 [![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat&logo=kotlin)](https://kotlinlang.org)
+# 🎄 Advent of code 2021 [![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat&logo=kotlin&logoColor=white)](https://kotlinlang.org)
 
 
 ---
