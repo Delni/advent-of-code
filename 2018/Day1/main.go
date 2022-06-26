@@ -1,12 +1,14 @@
 package main
 
+import (
+	"delni.me/2018/utils"
+)
 
 func main() {
-	 input := ReadInputAsInt("inputs/day1.txt")
+	input := utils.ReadInputAsInt("Day1/input.txt")
 
-	 AoCRunner("01", input, FrequencyAnalyzer, FrequencyFinder)
+	utils.AoCRunner("01", input, FrequencyAnalyzer, FrequencyFinder)
 }
-
 
 func FrequencyAnalyzer(changes []int) int {
 	frequency := 0
@@ -36,9 +38,9 @@ func FrequencyFinder(changes []int) int {
 
 func isElementIn(array []int, value int) bool {
 	for _, v := range array {
-	  if v == value {
-		return true
-	  }
+		if v == value {
+			return true
+		}
 	}
 	return false
-  }
+}
