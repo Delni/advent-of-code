@@ -1,36 +1,10 @@
 package main
 
-import (
-	"fmt"
-	"io/ioutil"
-	"log"
-	"strconv"
-	"strings"
-)
-
 
 func main() {
-	content, err := ioutil.ReadFile("inputs/day1.txt")
+	 input := ReadInputAsInt("inputs/day1.txt")
 
-     if err != nil {
-          log.Fatal(err)
-     }
-
-	 rawInput := strings.Split(string(content), "\n")
-
-	 var input []int
-	 for _,line := range rawInput {
-		number, err := strconv.Atoi(line)
-		if err != nil {
-			log.Fatal(err)
-	   }
-	   input = append(input, number)
-	 }
-
-	 fmt.Println("------ DAY 01 ------")
-	 fmt.Printf("Part One: %10v\n", FrequencyAnalyzer(input))
-	 fmt.Printf("Part One: %10v\n", FrequencyFinder(input))
-	 fmt.Println("--------------------")
+	 AoCRunner("01", input, FrequencyAnalyzer, FrequencyFinder)
 }
 
 
