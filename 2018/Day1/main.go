@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	input := utils.ReadInputAsInt("Day1/input.txt")
+	input := utils.ReadInputAsInt("../Day1/input.txt")
 
 	utils.AoCRunner("01", input, FrequencyAnalyzer, FrequencyFinder)
 }

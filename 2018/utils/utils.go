@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-func AoCRunner(day string, input []int, Part1 func([]int) int, Part2 func([]int) int) {
+func AoCRunner[K int|string](day string, input []K, Part1 func([]K) int, Part2 func([]K) int) {
 	now := time.Now()
 	fmt.Printf("-------- DAY %s --------\n", day)
 	fmt.Printf("Part One: %14v\n", Part1(input))
@@ -33,6 +33,24 @@ func ReadInputAsInt(fname string) []int {
 		if err != nil {
 			log.Fatal(err)
 		}
+		input = append(input, i)
+	}
+
+	return input
+}
+
+func ReadInputAsString(fname string) []string {
+	file, err := os.Open(fname)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file.Close()
+
+	var input []string
+
+	scan := bufio.NewScanner(file)
+	for scan.Scan() {
+		i := scan.Text()
 		input = append(input, i)
 	}
 
