@@ -1,4 +1,4 @@
-package com.github.delni.advent_of_code.days
+package com.github.delni.adventOfCode2021.days
 
 /**
  * --- Day 1: Sonar Sweep ---

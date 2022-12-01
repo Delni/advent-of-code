@@ -1,24 +1,6 @@
 plugins {
-    kotlin("jvm") version "1.6.0"
+    id("org.jetbrains.kotlin.jvm") version "1.8.0-Beta"
 }
-
-repositories {
-    mavenCentral()
-    jcenter()
-}
-
-tasks {
-    sourceSets {
-        main {
-            java.srcDirs("src")
-        }
-    }
-
-    wrapper {
-        gradleVersion = "7.3"
-    }
-}
-
 dependencies {
     implementation("com.andreapivetta.kolor:kolor:1.0.0")
 }

@@ -1,9 +1,9 @@
-package com.github.delni.advent_of_code.days
+package com.github.delni.adventOfCode2021.days
 
 import com.andreapivetta.kolor.cyan
 import com.andreapivetta.kolor.green
 import com.andreapivetta.kolor.yellow
-import com.github.delni.advent_of_code.readInput
+import com.github.delni.adventOfCode2021.readInput
 
 
 abstract class AbstractDay(

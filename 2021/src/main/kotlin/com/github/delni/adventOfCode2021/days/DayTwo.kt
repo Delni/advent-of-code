@@ -1,7 +1,7 @@
-package com.github.delni.advent_of_code.days
+package com.github.delni.adventOfCode2021.days
 
-import com.github.delni.advent_of_code.submarine.Direction
-import com.github.delni.advent_of_code.submarine.Submarine
+import com.github.delni.adventOfCode2021.submarine.Direction
+import com.github.delni.adventOfCode2021.submarine.Submarine
 import java.lang.Integer.parseInt
 
 

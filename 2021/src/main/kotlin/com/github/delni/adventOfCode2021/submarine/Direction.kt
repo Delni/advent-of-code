@@ -1,4 +1,4 @@
-package com.github.delni.advent_of_code.submarine
+package com.github.delni.adventOfCode2021.submarine
 
 enum class Direction {
     FORWARD,

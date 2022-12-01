@@ -1,4 +1,4 @@
-package com.github.delni.advent_of_code.days
+package com.github.delni.adventOfCode2021.days
 
 class DayFour: AbstractDay("04", "Giant Squid", 4512) {
     override fun part1(input: List<String>): Int {
