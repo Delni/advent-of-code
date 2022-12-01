@@ -4,6 +4,7 @@ import (
 	"delni.me/2018/day1"
 	"delni.me/2018/day2"
 	"delni.me/2018/day3"
+	"delni.me/2018/day4"
 	"delni.me/2018/utils"
 )
 
@@ -25,5 +26,11 @@ func main() {
 		utils.ReadInputAsString("./day3/input.txt"), 
 		day3.CountCommonInches, 
 		day3.FindUniqueNotOverlapping,
+	)
+	utils.AoCRunner(
+		"04", 
+		utils.ReadInputAsString("./day4/input.txt"), 
+		day4.Part1, 
+		day4.Part2,
 	)
 }
