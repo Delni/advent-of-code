@@ -33,4 +33,10 @@ func main() {
 		day4.Part1, 
 		day4.Part2,
 	)
+	// utils.AoCRunner(
+	// 	"05", 
+	// 	utils.ReadInputAsString("./day5/input.txt"), 
+	// 	day5.Part1, 
+	// 	day4.Part2,
+	// )
 }
