@@ -1,6 +1,6 @@
 package com.github.delni.adventOfCode2021.days
 
-class DayFour: AbstractDay("04", "Giant Squid", 4512) {
+class DayFour: Abstract2021("04", "Giant Squid", 4512) {
     override fun part1(input: List<String>): Int {
         val draw = input.first().split(',').map(Integer::parseInt)
         val boards = input.drop(2).fold(mutableListOf(mutableListOf<List<Int>>())) { acc, elem ->

@@ -5,7 +5,7 @@ import com.github.delni.adventOfCode2021.submarine.Submarine
 import java.lang.Integer.parseInt
 
 
-class DayTwo : AbstractDay("02", "Dive !", 150, 900) {
+class DayTwo : Abstract2021("02", "Dive !", 150, 900) {
 
     override fun part1(input: List<String>): Int {
         val submarine = Submarine()

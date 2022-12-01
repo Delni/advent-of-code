@@ -1,3 +1,7 @@
 rootProject.name = "Advent of Code"
 
-include("2021")
+include(
+    "kutils",
+    "2021",
+    "2022"
+)

@@ -1,37 +1,33 @@
-package com.github.delni.adventOfCode2021.days
-
 import com.andreapivetta.kolor.cyan
 import com.andreapivetta.kolor.green
 import com.andreapivetta.kolor.yellow
-import com.github.delni.adventOfCode2021.readInput
-
 
 abstract class AbstractDay(
-    private val DAY: String,
-    private val TITLE: String,
-    private val TEST_VALUE_1: Int? = null,
-    private val TEST_VALUE_2: Int? = null
+    private val day: String,
+    private val year: Int,
+    private val title: String,
+    private val testValue1: Int? = null,
+    private val testValue2: Int? = null
 ) {
 
     abstract fun part1(input: List<String>): Int
     abstract fun part2(input: List<String>): Int
 
-    init { run() }
-
-
-    private fun run() {
-        val testInput = readInput("Day${DAY}_test")
+    fun runWithTest() {
+        val testInput = readInput("Day${day}_test", year)
         val testResult1 = part1(testInput)
         val testResult2 = part2(testInput)
-        assert(TEST_VALUE_1?.let { testResult1 == TEST_VALUE_1} ?: true) {
-            "Expected $TEST_VALUE_1, got $testResult1"
+        assert(testValue1?.let { testResult1 == testValue1} ?: true) {
+            "Expected $testValue1, got $testResult1"
         }
-        assert(TEST_VALUE_2?.let { testResult2 == TEST_VALUE_2} ?: true) {
-            "Expected $TEST_VALUE_2, got $testResult2"
+        assert(testValue2?.let { testResult2 == testValue2} ?: true) {
+            "Expected $testValue2, got $testResult2"
         }
-
-        val input = readInput("Day${DAY}")
-        val emphasizedText = "DAY$DAY: $TITLE".green()
+        run()
+    }
+    fun run() {
+        val input = readInput("Day${day}", year)
+        val emphasizedText = "DAY$day: $title".green()
         val title = "+-------- $emphasizedText --------+"
         val part1Result = part1(input).toString().yellow()
         val part2Result = part2(input).toString().yellow()

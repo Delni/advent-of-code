@@ -2,7 +2,7 @@ package com.github.delni.adventOfCode2021.days
 
 import com.github.delni.adventOfCode2021.submarine.Submarine
 
-class DayThree: AbstractDay("03", "Binary Diagnostic", 198) {
+class DayThree: Abstract2021("03", "Binary Diagnostic", 198) {
     override fun part1(input: List<String>): Int {
         val sub = Submarine()
         sub.diagnose(input)

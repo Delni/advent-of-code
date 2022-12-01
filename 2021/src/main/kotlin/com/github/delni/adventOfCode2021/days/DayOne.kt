@@ -3,7 +3,7 @@ package com.github.delni.adventOfCode2021.days
 /**
  * --- Day 1: Sonar Sweep ---
  */
-class DayOne: AbstractDay("01", "Sonar Sweep", 7, 5) {
+class DayOne: Abstract2021("01", "Sonar Sweep", 7, 5) {
     override fun part1(input: List<String>): Int {
         return input
             .map(Integer::parseInt)
