@@ -173,5 +173,8 @@ doc/api/
 *.js.deps
 *.js.map
 
+.gradle
+.idea
+build
 
 # End of https://www.toptal.com/developers/gitignore/api/vscode,node,macos

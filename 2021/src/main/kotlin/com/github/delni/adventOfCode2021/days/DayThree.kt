@@ -1,6 +1,6 @@
-package com.github.delni.advent_of_code.days
+package com.github.delni.adventOfCode2021.days
 
-import com.github.delni.advent_of_code.submarine.Submarine
+import com.github.delni.adventOfCode2021.submarine.Submarine
 
 class DayThree: AbstractDay("03", "Binary Diagnostic", 198) {
     override fun part1(input: List<String>): Int {
