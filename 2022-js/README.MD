@@ -1,4 +1,12 @@
-# 🎄 Advent of code 2022 in ![Kotlin](https://img.shields.io/badge/-Kotlin-%237F52FF?style=flat&logo=kotlin&logoColor=fff)
+# 🎄 Advent of code 2022 ![Javascript](https://img.shields.io/badge/-Javascript-F7DF1E?style=flat&logo=javascript&logoColor=000)
+
+## Install
+You will need Node to run this project. Please see [https://nodejs.org/](https://nodejs.org/) for more details on your platform.
+
+## Run
+```shell
+yarn test
+```
 
 ---
 
