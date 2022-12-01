@@ -27,8 +27,8 @@ internal class Day1Test {
     }
 
     @Test
-    fun `part 2 should return 41000 on test input`() {
-        expect(41000) {
+    fun `part 2 should return 45000 on test input`() {
+        expect(45000) {
             Day1().part2(testInput)
         }
     }
