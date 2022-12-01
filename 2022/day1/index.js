@@ -1,24 +1,10 @@
-const { readFileSync } = require('fs')
-const path = require('path')
+const { sum, reversed, readInput } = require('../utils')
 
-const input = parseInput(
-  readFileSync(path.join(__dirname, 'input.txt'), {
-    encoding: 'utf-8',
-    flag: 'r',
-  })
-)
+const input = readInput(__dirname)
+
 /**
  * @typedef {number[]} Inventory
- *
  */
-/**
- *
- * @param {string} input
- * @returns {string[]}
- */
-function parseInput(input) {
-  return input.split('\n')
-}
 
 /**
  *
@@ -45,20 +31,6 @@ function toInventories(lines) {
 function toTotal(inventories) {
   return inventories.map((inventory) => inventory.reduce(sum, 0))
 }
-
-/**
- * @param {number} a
- * @param {number} b
- * @returns {number}
- */
-const sum = (a, b) => a + b
-
-/**
- * @param {any} a
- * @param {any} b
- * @returns {number}
- */
-const reversed = (a, b) => b - a
 
 /**
  * @param {string[]} input
