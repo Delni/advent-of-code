@@ -9,13 +9,13 @@ import (
 	"time"
 )
 
-func AoCRunner[K int|string](day string, input []K, Part1 func([]K) int, Part2 func([]K) int) {
+func AoCRunner[K int|string](day string, input []K, Part1 func([]K) int, Part2 func([]K) K) {
 	now := time.Now()
-	fmt.Printf("-------- DAY %s --------\n", day)
-	fmt.Printf("Part One: %14v\n", Part1(input))
-	fmt.Printf("Part Two: %14v\n", Part2(input))
-	fmt.Printf("Ran in: %16v\n", time.Since(now))
-	fmt.Println("------------------------")
+	fmt.Printf("------------------- DAY %s ------------------\n", day)
+	fmt.Printf("Part One: %35v\n", Part1(input))
+	fmt.Printf("Part Two: %35v\n", Part2(input))
+	fmt.Printf("Ran in: %37v\n", time.Since(now))
+	fmt.Println("---------------------------------------------")
 }
 
 func ReadInputAsInt(fname string) []int {
