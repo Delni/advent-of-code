@@ -1,50 +1,71 @@
-package main
+package day2
 
 import (
-	"strings"
-
-	"delni.me/2018/utils"
+	"golang.org/x/exp/maps"
+	"golang.org/x/exp/slices"
 )
 
-func main() {
-	input := utils.ReadInputAsString("../Day2/input.txt")
-
-	utils.AoCRunner("02", input, Checksum, Checksum)
+func Have2Or3Letters(boxid string) (bool, bool) {
+	two_letters := false
+	three_letters := false
+	letter_counter := map[rune]int{}
+	for _, char := range boxid {
+		letter_counter[char] += 1
+	}
+	two_letters = slices.Contains(maps.Values(letter_counter), 2)
+	three_letters = slices.Contains(maps.Values(letter_counter), 3)
+	return two_letters, three_letters
 }
 
-func Checksum(input []string) int {
-	var twice int
-	var thrice int
-	for _, word := range input {
-		if HasCharacterTimes(word, 2) {
-			twice++
+func ComputeChecksum(boxids []string) int {
+	//two_and_threes := [](bool, bool)
+	count_of_two := 0
+	count_of_three := 0
+	for _, boxid := range boxids {
+		has_two, has_three := Have2Or3Letters(boxid)
+		if has_two {
+			count_of_two += 1
 		}
-		if HasCharacterTimes(word, 3) {
-			thrice++
+		if has_three {
+			count_of_three += 1
 		}
 	}
-	return twice * thrice
+	return count_of_two * count_of_three
 }
 
-func HasCharacterTimes(word string, times int) bool {
-	characters := strings.Split(word, "")
-	for _, character := range characters {
-		if len(strings.Split(word, character)) == times+1 {
-			return true
+func CountMany(boxids []string, maybe_boxid string) int {
+	count := 0
+	for _, boxid := range boxids {
+		if maybe_boxid == boxid {
+			count += 1
 		}
 	}
-	return false
+	return count
 }
 
-func CommonLetters(input []string) string {
-	for index, word := range input {
-		for _, otherWord := range input[index:] {
-			letters := append(strings.Split(word, ""), strings.Split(otherWord, "")...)
-			// TODO : while twice, remove
-			for i := 0; i < len(word); i++ {
-				
-			}
-			// if len == 2 -> Gotcha ?
+func Find2Occurences(boxids []string) string {
+	for _, boxid := range boxids {
+		if CountMany(boxids, boxid) == 2 {
+			return boxid
+		}
+	}
+	return ""
+}
+
+func Truncate(boxids []string, atPos int) []string {
+	truncated := []string{}
+	for _, boxid := range boxids {
+		truncated = append(truncated, boxid[:atPos]+boxid[atPos+1:])
+	}
+	return truncated
+}
+
+func FindLettersOfTwoCommonBoxes(boxids []string) string {
+	for i := 0; i < len(boxids[0]); i++ { // assume all ID have the same length
+		truncated_boxids := Truncate(boxids, i)
+		occ := Find2Occurences(truncated_boxids)
+		if len(occ) > 0 {
+			return occ
 		}
 	}
 	return ""
