@@ -5,7 +5,8 @@
   "author": "Nicolas DELAUNEY <niko-d@live.fr>",
   "license": "MIT",
   "scripts": {
-    "test": "mocha --recursive **/*.test.js"
+    "test": "mocha --recursive **/*.test.js",
+    "test:w": "mocha --recursive **/*.test.js --watch --reporter=nyan"
   },
   "devDependencies": {
     "chai": "^4.3.7",
