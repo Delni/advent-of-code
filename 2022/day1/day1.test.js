@@ -51,8 +51,8 @@ describe('Day 1', () => {
       expect(runPart1()).to.equal(72602)
     })
 
-	it('part 2 should be 207410', () => {
-		expect(runPart2()).to.equal(207410)
-	  })
+    it('part 2 should be 207410', () => {
+      expect(runPart2()).to.equal(207410)
+    })
   })
 })
