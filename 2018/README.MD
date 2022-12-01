@@ -5,7 +5,7 @@ You will need Go to run this project. Please see [https://go.dev/dl/](https://go
 
 ## Run
 ```shell
-go run day_<day>.go
+go run main.go
 ```
 
 ---
