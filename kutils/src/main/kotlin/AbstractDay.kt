@@ -1,4 +1,3 @@
-import com.andreapivetta.kolor.cyan
 import com.andreapivetta.kolor.green
 import com.andreapivetta.kolor.yellow
 
@@ -17,24 +16,27 @@ abstract class AbstractDay(
         val testInput = readInput("Day${day}_test", year)
         val testResult1 = part1(testInput)
         val testResult2 = part2(testInput)
-        assert(testValue1?.let { testResult1 == testValue1} ?: true) {
+        assert(testValue1?.let { testResult1 == testValue1 } ?: true) {
             "Expected $testValue1, got $testResult1"
         }
-        assert(testValue2?.let { testResult2 == testValue2} ?: true) {
+        assert(testValue2?.let { testResult2 == testValue2 } ?: true) {
             "Expected $testValue2, got $testResult2"
         }
         run()
     }
+
     fun run() {
         val input = readInput("Day${day}", year)
-        val emphasizedText = "DAY$day: $title".green()
-        val title = "+-------- $emphasizedText --------+"
-        val part1Result = part1(input).toString().yellow()
-        val part2Result = part2(input).toString().yellow()
+        val emphasizedText = "DAY $day: $title".green()
+        val title = "+--------- $emphasizedText ---------+"
+        val baseLength = title.length - 10
 
         println(title)
-        println("| Part 01 ".padEnd(title.length - part1Result.length - 3, ' ') + " $part1Result |")
-        println("| Part 02 ".padEnd(title.length - part2Result.length - 3, ' ') + " $part2Result |")
-        println("".cyan().padEnd(title.length, '-'))
+        println(makeOutputLine(baseLength, "Part 01", "${part1(input)}"))
+        println(makeOutputLine(baseLength, "Part 02", "${part2(input)}"))
+        println("+".padEnd(baseLength, '-') + "+")
     }
+
+    private fun makeOutputLine(baseLength: Int, title: String, result: String) =
+        "| $title".padEnd(baseLength - result.length - 1, ' ') + "${result.yellow()} |"
 }
