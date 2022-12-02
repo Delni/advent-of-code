@@ -1,4 +1,5 @@
-import com.github.delni.adventOfCode2022.days.Day1
+package com.github.delni.adventOfCode2022.days
+
 import org.junit.jupiter.api.Test
 import kotlin.test.expect
 
