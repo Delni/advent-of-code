@@ -13,16 +13,12 @@ class Day2Test {
     )
 
     @Test
-    fun `part 1 should return 15 on test input`() {
-        expect(15) {
-            Day2().part1(testInput)
-        }
+    fun `part 1 should return 15 on test input`() = expect(15) {
+        Day2().part1(testInput)
     }
 
     @Test
-    fun `part 2 should return 12 on test input`() {
-        expect(12) {
-            Day2().part2(testInput)
-        }
+    fun `part 2 should return 12 on test input`() = expect(12) {
+        Day2().part2(testInput)
     }
 }

@@ -1,32 +1,27 @@
 package com.github.delni.adventOfCode2022.days
 
 class Day2 : Abstract2022("02", "Rock Paper Scissors") {
-    override fun part1(input: List<String>): Int {
-        return input
-            .asSequence()
-            .map { it.split(" ") }
-            .map { Shape.parseString(it[0]) to Shape.parseString(it[1]) }
-            .map(::runGame)
-            .sum()
-    }
+    override fun part1(input: List<String>): Int = input
+        .asSequence()
+        .map { it.split(" ") }
+        .map { Shape.parseString(it[0]) to Shape.parseString(it[1]) }
+        .map(::runGame)
+        .sum()
 
-    override fun part2(input: List<String>): Int {
-        return input
-            .asSequence()
-            .map { it.split(" ") }
-            .map { Shape.parseString(it[0]) to it[1] }
-            .map { it.first to Shape.findOutput(it.second, it.first) }
-            .map(::runGame)
-            .sum()
-    }
+    override fun part2(input: List<String>): Int = input
+        .asSequence()
+        .map { it.split(" ") }
+        .map { Shape.parseString(it[0]) to it[1] }
+        .map { it.first to Shape.findOutput(it.second, it.first) }
+        .map(::runGame)
+        .sum()
 
-    private fun runGame(round: Pair<Shape, Shape>): Int {
-        return round.second.points + when (round.second.compareTo(round.first)) {
+    private fun runGame(round: Pair<Shape, Shape>): Int =
+        round.second.points + when (round.second.compareTo(round.first)) {
             0 -> 3
             1 -> 6
             else -> 0
         }
-    }
 }
 
 sealed class Shape(val points: Int) : Comparable<Shape> {
