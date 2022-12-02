@@ -9,7 +9,7 @@
 ## What is it ?
 Be sure to check out [Advent of Code](https://adventofcode.com/) website !
 
-## 2022 [![Javascript](https://img.shields.io/badge/-Javascript-F7DF1E?style=flat&logo=javascript&logoColor=000)](./2022-js)
+## 2022 [![Kotlin](https://img.shields.io/badge/-Kotlin-%237F52FF?style=flat&logo=kotlin&logoColor=fff)](./2022)
 | 01  | 02  | 03  | 04  | 05  | 06  | 07  | 08  | 09  | 10  | 11  | 12  | 13  | 14  | 15  | 16  | 17  | 18  | 19  | 20  |  21  | 22  | 23  | 24  | 25  |  
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |  
 | ⭐️⭐️ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
