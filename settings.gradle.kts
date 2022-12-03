@@ -1,7 +1,7 @@
 rootProject.name = "Advent of Code"
 
 include(
-    "kutils",
+    "tools:kotlin",
     "2021",
     "2022"
 )

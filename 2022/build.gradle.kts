@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":kutils"))
+    implementation(project(":tools:kotlin"))
     testImplementation(kotlin("test"))
 }
 
