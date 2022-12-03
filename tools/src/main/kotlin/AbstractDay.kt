@@ -1,5 +1,9 @@
 import com.andreapivetta.kolor.green
+import com.andreapivetta.kolor.red
 import com.andreapivetta.kolor.yellow
+import java.io.FileNotFoundException
+
+private const val BASE_LENGTH = 60
 
 abstract class AbstractDay(
     private val day: String,
@@ -26,17 +30,22 @@ abstract class AbstractDay(
     }
 
     fun run() {
-        val input = readInput("Day${day}", year)
-        val emphasizedText = "DAY $day: $title".green()
-        val title = "+--------- $emphasizedText ---------+"
-        val baseLength = title.length - 10
-
-        println(title)
-        println(makeOutputLine(baseLength, "Part 01", "${part1(input)}"))
-        println(makeOutputLine(baseLength, "Part 02", "${part2(input)}"))
-        println("+".padEnd(baseLength, '-') + "+")
+        println(titleBuilder("DAY $day: $title"))
+        try {
+            val input = readInput("Day${day}", year)
+            println(outputBuilder("Part 01", "${part1(input)}"))
+            println(outputBuilder("Part 02", "${part2(input)}"))
+        } catch (e: FileNotFoundException) {
+            println(("| " + e.message?.red()).padEnd(BASE_LENGTH + 8) + " |")
+        }
+        println("+".padEnd(BASE_LENGTH, '-') + "+")
     }
 
-    private fun makeOutputLine(baseLength: Int, title: String, result: String) =
-        "| $title".padEnd(baseLength - result.length - 1, ' ') + "${result.yellow()} |"
+    private fun titleBuilder(title: String): String {
+        val padLength = maxOf(BASE_LENGTH - title.length, 0) / 2
+        return "+".padEnd(padLength, '-') + " ${title.green()} " + "+".padStart(padLength, '-')
+    }
+
+    private fun outputBuilder(title: String, result: String) =
+        "| $title".padEnd(BASE_LENGTH - result.length - 1, ' ') + "${result.yellow()} |"
 }
