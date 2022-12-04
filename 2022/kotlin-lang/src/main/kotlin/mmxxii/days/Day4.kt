@@ -3,27 +3,28 @@ package mmxxii.days
 class Day4 : Abstract2022("04", "Camp Cleanup") {
     override fun part1(input: List<String>) = input
         .map(String::toElvesPair)
-        .count(List<IntRange>::overlapCompletely)
+        .count(Sequence<IntRange>::completeOverlap)
 
     override fun part2(input: List<String>) = input
         .map(String::toElvesPair)
-        .count {
-            it.first()
-                .any { id -> id in it.last() } || it.last().any { id -> id in it.first() }
-        }
+        .count(Sequence<IntRange>::anyOverlap)
 }
 
-fun String.toElvesPair(): List<IntRange> {
-    val regex = Regex("(\\d+)-(\\d+)")
-    return regex.findAll(this).toList().map {
-        val bounds = it.groups
+fun String.toElvesPair() = Regex("""(\d+)-(\d+)""")
+    .findAll(this)
+    .map(MatchResult::groups)
+    .map {
+        it
             .drop(1)
             .filterNotNull()
             .map(MatchGroup::value)
             .map(String::toInt)
-        IntRange(bounds.first(), bounds.last())
+            .run { IntRange(first(), last()) }
     }
-}
 
-fun List<IntRange>.overlapCompletely() = first()
-    .all { id -> id in last() } || last().all { id -> id in first() }
+fun Sequence<IntRange>.completeOverlap() = overlapWithPredicator(Iterable<Int>::all)
+
+fun Sequence<IntRange>.anyOverlap() = overlapWithPredicator(Iterable<Int>::any)
+
+fun Sequence<IntRange>.overlapWithPredicator(predicator: Iterable<Int>.(predicate: (Int) -> Boolean) -> Boolean) =
+    first().predicator { it in last() } || last().predicator { it in first() }
