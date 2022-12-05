@@ -1,6 +1,6 @@
 package mmxxii.days
 
-class Day1 : Abstract2022("01", "Calorie Counting") {
+class Day1 : Abstract2022<Int>("01", "Calorie Counting") {
     override fun part1(input: List<String>): Int = input
         .toInventories()
         .map(List<Int>::sum)

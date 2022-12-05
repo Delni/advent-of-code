@@ -1,6 +1,6 @@
 package mmxxii.days
 
-class Day4 : Abstract2022("04", "Camp Cleanup") {
+class Day4 : Abstract2022<Int>("04", "Camp Cleanup") {
     override fun part1(input: List<String>) = input
         .map(String::toElvesPair)
         .count(Sequence<IntRange>::completeOverlap)

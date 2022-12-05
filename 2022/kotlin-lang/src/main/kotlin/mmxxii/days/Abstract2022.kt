@@ -2,9 +2,9 @@ package mmxxii.days
 
 import AbstractDay
 
-abstract class Abstract2022(
+abstract class Abstract2022<T>(
     day: String,
     title: String,
-    testValue1: Int? = null,
-    testValue2: Int? = null
-): AbstractDay(day, 2022, title, testValue1, testValue2)
+    testValue1: T? = null,
+    testValue2: T? = null
+): AbstractDay<T>(day, 2022, title, testValue1, testValue2)

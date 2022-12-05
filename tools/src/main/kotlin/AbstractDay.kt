@@ -5,16 +5,16 @@ import java.io.FileNotFoundException
 
 private const val BASE_LENGTH = 60
 
-abstract class AbstractDay(
+abstract class AbstractDay<T>(
     private val day: String,
     private val year: Int,
     private val title: String,
-    private val testValue1: Int? = null,
-    private val testValue2: Int? = null
+    private val testValue1: T? = null,
+    private val testValue2: T? = null
 ) {
 
-    abstract fun part1(input: List<String>): Int
-    abstract fun part2(input: List<String>): Int
+    abstract fun part1(input: List<String>): T
+    abstract fun part2(input: List<String>): T
 
     fun runWithTest() {
         val testInput = readInput("Day${day}_test", year)

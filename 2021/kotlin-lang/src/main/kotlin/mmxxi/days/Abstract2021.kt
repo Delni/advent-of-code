@@ -7,6 +7,6 @@ abstract class Abstract2021(
     title: String,
     testValue1: Int? = null,
     testValue2: Int? = null
-): AbstractDay(day, 2021, title, testValue1, testValue2) {
+): AbstractDay<Int>(day, 2021, title, testValue1, testValue2) {
     init { runWithTest() }
 }

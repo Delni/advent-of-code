@@ -5,7 +5,7 @@ import mmxxii.entities.Rock
 import mmxxii.entities.Scissors
 import mmxxii.entities.Shape
 
-class Day2 : Abstract2022("02", "Rock Paper Scissors") {
+class Day2 : Abstract2022<Int>("02", "Rock Paper Scissors") {
     override fun part1(input: List<String>): Int = input
         .normalize { it[1].toShape() to it[0].toShape() }
         .map(::runGame)

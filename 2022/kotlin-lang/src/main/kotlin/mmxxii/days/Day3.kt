@@ -1,6 +1,6 @@
 package mmxxii.days
 
-class Day3 : Abstract2022("03", "Rucksack Reorganization") {
+class Day3 : Abstract2022<Int>("03", "Rucksack Reorganization") {
     override fun part1(input: List<String>): Int = input
         .map(String::toRucksack)
         .map { it.first.intersect(it.second.toSet()).single() }
