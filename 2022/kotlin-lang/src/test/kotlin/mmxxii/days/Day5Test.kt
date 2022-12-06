@@ -24,7 +24,7 @@ class Day5Test {
     }
 
     @Test
-    fun `part 2 should return 4 on test input`() = expect("MCD") {
+    fun `part 2 should return "MCD" on test input`() = expect("MCD") {
         Day5().part2(testInput)
     }
 
