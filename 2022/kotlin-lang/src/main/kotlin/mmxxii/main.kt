@@ -3,10 +3,13 @@ package mmxxii
 import mmxxii.days.*
 
 fun main() {
-    Day1().run()
-    Day2().run()
-    Day3().run()
-    Day4().run()
-    Day5().run()
-    Day6().run()
+    listOf(
+        Day1(),
+        Day2(),
+        Day3(),
+        Day4(),
+        Day5(),
+        Day6(),
+        Day7(),
+    ).forEach(Abstract2022<out Any>::run)
 }
