@@ -27,7 +27,7 @@ class Day4Test {
     }
 
     @Nested
-    class Helpers {
+    inner class Helpers {
         @Test
         fun `should parse string into elves pair of ranges`() = expect(listOf(2..4, 6..8)) {
             "2-4,6-8".toElvesPair().toList()
