@@ -10,7 +10,7 @@
   - [x] Day 6: [Tuning Trouble](https://adventofcode.com/2022/day/6)
   - [ ] Day 7: [No Space Left On Device](https://adventofcode.com/2022/day/7)
   - [ ] Day 8: [Treetop Tree House](https://adventofcode.com/2022/day/8)
-  - [ ] Day 9: [-](https://adventofcode.com/2022/day/9)
+  - [ ] Day 9: [Rope Bridge](https://adventofcode.com/2022/day/9)
   - [ ] Day 10: [-](https://adventofcode.com/2022/day/10)
   - [ ] Day 11: [-](https://adventofcode.com/2022/day/11)
   - [ ] Day 12: [-](https://adventofcode.com/2022/day/12)

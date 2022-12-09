@@ -11,6 +11,7 @@ fun main() {
         Day5(),
         Day6(),
         Day7(),
-        Day8()
+        Day8(),
+        Day9(),
     ).forEach(Abstract2022<out Any>::run)
 }
