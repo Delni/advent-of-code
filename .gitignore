@@ -176,5 +176,6 @@ doc/api/
 .gradle
 .idea
 build
+bin
 
 # End of https://www.toptal.com/developers/gitignore/api/vscode,node,macos
