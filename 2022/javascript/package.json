@@ -1,0 +1,14 @@
+{
+  "name": "aoc-js-ascii",
+  "version": "1.0.0",
+  "main": "main.js",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "sleep": "^6.3.0"
+  }
+}
