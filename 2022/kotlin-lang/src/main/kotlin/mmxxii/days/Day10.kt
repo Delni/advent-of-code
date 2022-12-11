@@ -17,7 +17,7 @@ class Day10 : Abstract2022<Int>("10", "Cathode-Ray Tube") {
 
     override fun part2(input: List<String>) = CathodicRayTube()
         .compute(input)
-        .apply { println(this) }
+        .apply { println("\t$this") }
         .screen
         .flatten()
         .count { it == CathodicRayTube.LIT_PIXEL }
