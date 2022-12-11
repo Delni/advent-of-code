@@ -1,5 +1,6 @@
 package mmxxii.days
 
+import mmxxii.entities.toMonkey
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 import java.io.File
@@ -81,12 +82,12 @@ class Day11Test {
         private val input = File("../resources", "Day11.txt").readLines()
 
         @Test
-        fun `part 1 should return 55458 on test input`() = expect(55458) {
+        fun `part 1 should return 55458 on prod input`() = expect(55458) {
             Day11().part1(input)
         }
 
         @Test
-        fun `part 2 should return 108 lit pixels on test input`() = expect(108) {
+        fun `part 2 should return 14508081294 on prod input`() = expect(14508081294) {
             Day11().part2(input)
         }
     }
