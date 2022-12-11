@@ -1,8 +1,10 @@
 package mmxxii.days
 
+import mmxxii.entities.canSeeFarWithTrees
+
 class Day8 : Abstract2022<Int>("08", "Treetop Tree House") {
     override fun part1(input: List<String>) = input
-        .toListOfInt()
+        .toTrees()
         .flatMapIndexed { i, trees ->
             trees.mapIndexed { j, tree ->
                 (i to j).withDirections(trees, input) { left, right, top, bottom ->
@@ -19,7 +21,7 @@ class Day8 : Abstract2022<Int>("08", "Treetop Tree House") {
         .size
 
     override fun part2(input: List<String>) = input
-        .toListOfInt()
+        .toTrees()
         .flatMapIndexed { i, trees ->
             trees.mapIndexed { j, tree ->
                 (i to j).withDirections(trees, input) { left, right, top, bottom ->
@@ -34,7 +36,7 @@ class Day8 : Abstract2022<Int>("08", "Treetop Tree House") {
         }
         .max()
 
-    private fun List<String>.toListOfInt() = map {
+    private fun List<String>.toTrees() = map {
         it
             .split("")
             .filter(String::isNotBlank)
@@ -55,13 +57,5 @@ class Day8 : Abstract2022<Int>("08", "Treetop Tree House") {
             column.subList(first + 1, columns.size)
         )
     }
-}
-
-infix fun Int.canSeeFarWithTrees(list: List<Int>): Int {
-    val firstIndex = list.indexOfFirst { it >= this }
-    if (firstIndex == -1 || list.size == 1) {
-        return list.size
-    }
-    return list.take(firstIndex + 1).size
 }
 
