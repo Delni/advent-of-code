@@ -10,3 +10,10 @@ infix fun Tree.canSeeFarWithTrees(list: List<Tree>): Int {
     }
     return list.take(firstIndex + 1).size
 }
+
+fun List<String>.toTrees() = map {
+    it
+        .split("")
+        .filter(String::isNotBlank)
+        .map(String::toInt)
+}

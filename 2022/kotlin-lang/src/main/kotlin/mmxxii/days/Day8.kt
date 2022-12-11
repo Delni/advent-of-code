@@ -1,6 +1,7 @@
 package mmxxii.days
 
 import mmxxii.entities.canSeeFarWithTrees
+import mmxxii.entities.toTrees
 
 class Day8 : Abstract2022<Int>("08", "Treetop Tree House") {
     override fun part1(input: List<String>) = input
@@ -35,13 +36,6 @@ class Day8 : Abstract2022<Int>("08", "Treetop Tree House") {
             }
         }
         .max()
-
-    private fun List<String>.toTrees() = map {
-        it
-            .split("")
-            .filter(String::isNotBlank)
-            .map(String::toInt)
-    }
 
     private fun <T> Pair<Int, Int>.withDirections(
         row: List<Int>,
