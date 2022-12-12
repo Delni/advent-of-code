@@ -1,5 +1,6 @@
 package mmxxii.days
 
+import mmxxii.entities.canSeeFarWithTrees
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 import java.io.File
@@ -32,15 +33,15 @@ class Day8Test {
         fun `should return first tree blocking the view`() {
             val tree = 5
             expect(2) {
-                tree.canSeeFarWithTrees(listOf(2, 5, 2))
+                tree canSeeFarWithTrees listOf(2, 5, 2)
             }
 
             expect(1) {
-                tree.canSeeFarWithTrees(listOf(5, 2))
+                tree canSeeFarWithTrees listOf(5, 2)
             }
 
             expect(2) {
-                tree.canSeeFarWithTrees(listOf(0, 2))
+                tree canSeeFarWithTrees listOf(0, 2)
             }
         }
 
