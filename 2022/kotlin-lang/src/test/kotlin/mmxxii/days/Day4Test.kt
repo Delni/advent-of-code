@@ -1,5 +1,6 @@
 package mmxxii.days
 
+import mmxxii.entities.toElvesPair
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 
