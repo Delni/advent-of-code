@@ -3,29 +3,27 @@ package mmxxii.days
 import java.awt.Point
 import kotlin.math.absoluteValue
 
-class Day15(val offset: Int = 10000) : Abstract2022<Int>("15", "Beacon Exclusion Zone") {
+class Day15(val offset: Int = 2000000) : Abstract2022<Int>("15", "Beacon Exclusion Zone") {
     override fun part1(input: List<String>): Int = input
         .flatMap(String::toSensorsAndBeacons)
         .map(Pair<Sensor, Beacon>::first)
-        .flatMap { it.visitedAt(offset) }
-        .sortedBy(Point::x)
+        .map { it.cover(offset) }
+        .flatMap { it.asSequence() }
+        //.sortedBy(Point::x)
         .toSet()
-        .size
+        .size - 1
 
     override fun part2(input: List<String>): Int = input.size
 }
 
 data class Beacon(val position: Point)
 data class Sensor(val position: Point, val closestBeaconDistance: Int) {
-    fun coverageAt(line: Int): Int = (closestBeaconDistance - (position.y - line).absoluteValue)
+    private fun coverageAt(line: Int): Int = (closestBeaconDistance - (position.y - line).absoluteValue)
         .takeIf { it > 0 }
         ?.let { it * 2 + 1}
         ?: 0
 
-    fun visitedAt(line: Int): Set<Point> = List(coverageAt(line)) { index ->
-        val x = index + position.x / 2 - 1
-        Point(x, line)
-    }.toSet()
+    fun cover(line: Int) = coverageAt(line).let { (position.x - it /2 ) .. (position.x + it /2) }
 }
 
 fun String.toSensorsAndBeacons(): List<Pair<Sensor, Beacon>> =

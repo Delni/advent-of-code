@@ -30,7 +30,7 @@ internal class Day15Test {
     }
 
     @Test
-    fun `part 2 should return 93 on test input`() = expect(93) {
+    fun `part 2 should return 56000011 on test input`() = expect(56000011) {
         Day15().part2(testInput)
     }
 
@@ -53,7 +53,7 @@ internal class Day15Test {
         private val input = File("../resources", "Day15.txt").readLines()
 
         @Test
-        fun `part 1 should return 808 on prod input`() = expect(808) {
+        fun `part 1 should return 5688618 on prod input`() = expect(5688618) {
             Day15().part1(input)
         }
 
