@@ -21,7 +21,7 @@
   - [ ] Day 17: [Pyroclastic Flow](https://adventofcode.com/2022/day/17)
   - [ ] Day 18: [Boiling Boulders](https://adventofcode.com/2022/day/18)
   - [ ] Day 19: [Not Enough Minerals](https://adventofcode.com/2022/day/19)
-  - [ ] Day 20: [-](https://adventofcode.com/2022/day/20)
+  - [ ] Day 20: [Grove Positioning System](https://adventofcode.com/2022/day/20)
   - [ ] Day 21: [-](https://adventofcode.com/2022/day/21)
   - [ ] Day 22: [-](https://adventofcode.com/2022/day/22)
   - [ ] Day 23: [-](https://adventofcode.com/2022/day/23)
