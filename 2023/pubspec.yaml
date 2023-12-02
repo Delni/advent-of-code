@@ -1,4 +1,4 @@
-name: AdventOfCode2020
+name: AdventOfCode2023
 environment:
   sdk: '>=2.12.0 <=3.3.0'
 dependencies:

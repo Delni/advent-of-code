@@ -1,4 +1,4 @@
-import 'package:AdventOfCode2020/utils.dart';
+import 'package:AdventOfCode2023/utils.dart';
 
 extension MathList on Iterable {
   num sum() => this.fold<num>(0, (p, e) => p + e);
