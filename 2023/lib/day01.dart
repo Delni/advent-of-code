@@ -1,9 +1,5 @@
 import 'package:AdventOfCode2023/utils.dart';
 
-extension MathList on Iterable {
-  num sum() => this.fold<num>(0, (p, e) => p + e);
-}
-
 void main() async {
   final List<String> input = await getInputForDay(1);
   print("--- PART 0NE --- ");
