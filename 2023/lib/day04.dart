@@ -7,6 +7,8 @@ void main() async {
 
   print("--- PART 0NE ---");
   print(input.map(score).sum());
+  print("--- PART TWO ---");
+  print(winScratchCards(input, initialCards: input));
 }
 
 num score(String card) {
@@ -38,3 +40,19 @@ List<int> stripWinningNumbers(String card) {
 }
 
 int trimToInt(String number) => int.parse(number.trim());
+
+int winScratchCards(List<String> cards, {required List<String> initialCards}) {
+  int total = cards.length;
+  cards.forEach((card) {
+    final validNumbers = stripWinningNumbers(card);
+    final cardId = int.parse(
+        RegExp(r'Card\s+(?<id>\d+):').firstMatch(card)!.namedGroup('id')!);
+    if (validNumbers.isNotEmpty) {
+      total += winScratchCards(
+        initialCards.sublist(cardId, validNumbers.length + cardId),
+        initialCards: initialCards,
+      );
+    }
+  });
+  return total;
+}
