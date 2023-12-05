@@ -11,9 +11,9 @@ dart run lib/<day>.dart
 ---
 
   - [ ] Day 1: [Trebuchet?!](https://adventofcode.com/2023/day/1)
-  - [ ] Day 2: [Cube Conundrum](https://adventofcode.com/2023/day/2)
+  - [x] Day 2: [Cube Conundrum](https://adventofcode.com/2023/day/2)
   - [ ] Day 3: [Gear Ratios](https://adventofcode.com/2023/day/3)
-  - [ ] Day 4: [-](https://adventofcode.com/2023/day/4)
+  - [ ] Day 4: [Scratchcards](https://adventofcode.com/2023/day/4)
   - [ ] Day 5: [-](https://adventofcode.com/2023/day/5)
   - [ ] Day 6: [-](https://adventofcode.com/2023/day/6)
   - [ ] Day 7: [-](https://adventofcode.com/2023/day/7)
