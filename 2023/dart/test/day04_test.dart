@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:AdventOfCode2023/day04.dart';
 import 'package:AdventOfCode2023/utils.dart';
 import 'package:test/test.dart';
