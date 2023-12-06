@@ -2,12 +2,12 @@ fn main() {
     println!(
         "{}:\t{}",
         "Day 4 - Part 1",
-        part1(include_str!("./input.txt"))
+        part1(include_str!("../../../resources/day04.txt"))
     );
     println!(
         "{}:\t{}",
         "Day 4 - Part 2",
-        part2(include_str!("./input.txt"))
+        part2(include_str!("../../../resources/day04.txt"))
     );
 }
 

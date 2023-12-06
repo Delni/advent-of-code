@@ -14,7 +14,7 @@ dart run lib/<day>.dart
   - [x] Day 2: [Cube Conundrum](https://adventofcode.com/2023/day/2)
   - [ ] Day 3: [Gear Ratios](https://adventofcode.com/2023/day/3)
   - [ ] Day 4: [Scratchcards](https://adventofcode.com/2023/day/4)
-  - [ ] Day 5: [-](https://adventofcode.com/2023/day/5)
+  - [ ] Day 5: [If You Give A Seed A Fertilizer](https://adventofcode.com/2023/day/5)
   - [ ] Day 6: [-](https://adventofcode.com/2023/day/6)
   - [ ] Day 7: [-](https://adventofcode.com/2023/day/7)
   - [ ] Day 8: [-](https://adventofcode.com/2023/day/8)
