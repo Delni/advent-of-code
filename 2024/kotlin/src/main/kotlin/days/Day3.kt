@@ -9,20 +9,19 @@ class Day3 : AbstractDay<Int>("03", 2024, "Mull It Over") {
             "mul\\((\\d{1,3}),(\\d{1,3})\\)".toRegex().findAll(it)
         }.map { matchResult ->
             matchResult.groupValues[1].toInt() * matchResult.groupValues[2].toInt()
-        }.reduce<Int, Int>(Int::plus)
+        }.sumOf { it }
 
     override fun part2(input: List<String>) = input.joinToString("")
         .let { string ->
-            "^(.+)?don't\\(\\)|do\\(\\)(.+)?(don't\\(\\))*$".toRegex()
+            "do\\(\\)|don't\\(\\)|mul\\((\\d{1,3}),(\\d{1,3})\\)".toRegex()
                 .findAll(string)
-                .map { matchResult ->
-                    matchResult
-                        .groupValues
-                        .takeLast(3)
-                        .first(String::isNotEmpty)
-                }.map { string ->
-                    part1(listOf(string))
-                }.reduce<Int, Int>(Int::plus)
+                .fold(0 to true) { acc, element ->
+                    when {
+                        element.value.startsWith("mul") and acc.second -> acc.first + element.groupValues[1].toInt() * element.groupValues[2].toInt() to acc.second
+                        element.value.startsWith("don't") -> acc.first to false
+                        element.value.startsWith("do") -> acc.first to true
+                        else -> acc
+                    }
+                }.first
         }
-
 }
