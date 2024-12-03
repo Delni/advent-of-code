@@ -18,7 +18,7 @@ class Day1: AbstractDay<Int>("01", 2024, "Historian Hysteria") {
         righty.sort()
         return lefty.mapIndexed { index, it ->
             (it - righty[index]).absoluteValue
-        }.reduce<Int, Int>(Int::plus)
+        }.sumOf { it }
     }
 
     override fun part2(input: List<String>): Int {
@@ -34,6 +34,6 @@ class Day1: AbstractDay<Int>("01", 2024, "Historian Hysteria") {
 
         return lefty.map {
             it * righty.filter { i -> i == it }.size
-        }.reduce<Int, Int>(Int::plus)
+        }.sumOf { it }
     }
 }
