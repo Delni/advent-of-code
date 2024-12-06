@@ -1,6 +1,3 @@
-import com.andreapivetta.kolor.green
-import com.andreapivetta.kolor.red
-import com.andreapivetta.kolor.yellow
 import java.io.FileNotFoundException
 
 private const val BASE_LENGTH = 60
@@ -20,10 +17,10 @@ abstract class AbstractDay<T>(
         val testInput = readInput("Day${day}_test", year)
         val testResult1 = part1(testInput)
         val testResult2 = part2(testInput)
-        assert(testValue1?.let { testResult1 == testValue1 } ?: true) {
+        assert(testValue1?.let { testResult1 == testValue1 } != false) {
             "Expected $testValue1, got $testResult1"
         }
-        assert(testValue2?.let { testResult2 == testValue2 } ?: true) {
+        assert(testValue2?.let { testResult2 == testValue2 } != false) {
             "Expected $testValue2, got $testResult2"
         }
         run()
@@ -43,9 +40,24 @@ abstract class AbstractDay<T>(
 
     private fun titleBuilder(title: String): String {
         val padLength = maxOf(BASE_LENGTH - title.length, 0) / 2
-        return "+".padEnd(padLength, '-') + " ${title.green()} " + "+".padStart(padLength, '-')
+        val offset = title.length.takeIf{ it % 2 != 0 }?.let { 0  } ?: 1
+        return "+".padEnd(padLength - offset, '-') + " ${title.green()} " + "+".padStart(padLength, '-')
     }
 
     private fun outputBuilder(title: String, result: String) =
         "| $title".padEnd(BASE_LENGTH - result.length - 1, ' ') + "${result.yellow()} |"
 }
+
+
+const val ANSI_RESET: String = "\u001B[0m";
+const val ANSI_BLACK: String = "\u001B[30m";
+const val ANSI_RED: String = "\u001B[31m";
+const val ANSI_GREEN: String = "\u001B[32m";
+const val ANSI_YELLOW: String = "\u001B[33m";
+const val ANSI_BLUE: String = "\u001B[34m";
+const val ANSI_PURPLE: String = "\u001B[35m";
+const val ANSI_CYAN: String = "\u001B[36m";
+const val ANSI_WHITE: String = "\u001B[37m";
+fun String.red() = "$ANSI_RED$this$ANSI_RESET"
+fun String.green() = "$ANSI_GREEN$this$ANSI_RESET"
+fun String.yellow() = "$ANSI_YELLOW$this$ANSI_RESET"
