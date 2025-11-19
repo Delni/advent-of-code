@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'utils.dart';
+import '../../tools/dart/utils.dart';
 
 void main() {
   TypedOutput<int>(

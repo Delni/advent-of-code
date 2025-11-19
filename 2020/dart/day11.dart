@@ -1,4 +1,4 @@
-import 'utils.dart';
+import '../../tools/dart/utils.dart';
 
 main() {
   // print(WaitingArea(rows: sample, longview: true).occupiedSeats);

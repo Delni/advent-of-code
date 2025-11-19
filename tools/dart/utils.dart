@@ -52,6 +52,7 @@ class TypedOutput<T> {
     final result2 = await Future.microtask(() => part2(List.from(input)));
     print('Part 2 :'.padRight(width - result2.toString().length) +
         '$ANSI_BOLD_YELLOW$result2$ANSI_RESET');
+    print('-' * width);
   }
 }
 

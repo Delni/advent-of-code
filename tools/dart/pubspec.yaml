@@ -1,0 +1,6 @@
+name: advent_of_code_utils
+environment:
+  sdk: '>=3.0.0 <3.6.0'
+dependencies:
+  meta: ^1.16.0
+  path: ^1.8.0

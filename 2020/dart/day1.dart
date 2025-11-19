@@ -1,4 +1,4 @@
-import 'utils.dart';
+import '../../tools/dart/utils.dart';
 
 void main() async {
   const target = 2020;
