@@ -1,0 +1,16 @@
+name: AdventOfCode2015
+version: 1.0.0
+description: Solutions to Advent of Code 2015 in Dart.
+homepage: https://adventofcode.com/2015
+publish_to: none
+
+environment:
+  sdk: ^3.4.4
+
+dependencies:
+  path: ^1.8.0
+  advent_of_code_utils:
+    path: ../../tools/dart
+
+dev_dependencies:
+  test: ^1.24.0
