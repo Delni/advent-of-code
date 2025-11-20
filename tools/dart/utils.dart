@@ -5,10 +5,7 @@ import 'dart:io';
 import "package:path/path.dart" show dirname, join;
 
 Future<List<String>> getInputForDay(int day) async {
-  var path = join(dirname(Platform.script.path), '../resources/day$day.txt');
-  if(new File(path).existsSync() == false) {
-    path = join(dirname(Platform.script.path), '../resources/day0$day.txt');
-  }
+  var path = join(dirname(Platform.script.path), '../resources/day${day.toString().padLeft(2, '0')}.txt');
   return (await new File(path).readAsLines()).toList();
 }
 

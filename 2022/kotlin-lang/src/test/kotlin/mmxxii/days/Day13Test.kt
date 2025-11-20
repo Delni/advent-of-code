@@ -79,7 +79,7 @@ internal class Day13Test {
 
     @Nested
     inner class OnProdInputs {
-        private val input = File("../resources", "Day13.txt").readLines()
+        private val input = File("../resources", "day13.txt").readLines()
 
         @Test
         fun `part 1 should return 350 on prod input`() = expect(350) {

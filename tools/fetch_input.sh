@@ -31,7 +31,7 @@ mkdir -p "${YEAR}/resources"
 
 # Create temporary file to store response
 TEMP_FILE=$(mktemp)
-OUTPUT_FILE="${YEAR}/resources/Day$(printf "%02d" $DAY).txt"
+OUTPUT_FILE="${YEAR}/resources/day$(printf "%02d" $DAY).txt"
 
 # Fetch the input with error checking
 HTTP_CODE=$(curl -s -w "%{http_code}" -H "Cookie: session=${SESSION_COOKIE}" \
