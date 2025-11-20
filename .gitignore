@@ -179,3 +179,9 @@ build
 bin
 
 # End of https://www.toptal.com/developers/gitignore/api/vscode,node,macos
+
+
+
+## As per AOC recommendations, I will now stop committing the puzzles inputs
+# Ignore all files in resources directories (puzzle inputs)  
+resources/
