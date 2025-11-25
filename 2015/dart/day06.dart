@@ -10,6 +10,8 @@ void main() async {
   );
 }
 
+int plus(int a, int b) => a + b;
+
 int part1(List<String> entries) {
   final coordinates = Map<Point, bool>();
   entries.map(Instruction.parse).forEach((instruction) {
@@ -25,7 +27,7 @@ int part2(List<String> entries) {
     instruction.updateBrightnessOf(coordinates);
   });
 
-  return coordinates.entries.map((it) => it.value).fold(0, (total, value) => total + value);
+  return coordinates.entries.map((it) => it.value).reduce(plus);
 }
 
 enum Action { TURN_ON, TURN_OFF, TOGGLE }
