@@ -14,12 +14,6 @@ void main() {
     expect(pair.from, "London");
     expect(pair.to, "Dublin");
     expect(pair.distance, 464);
-    // final routes = SantaRoutes.from([
-    //   "London to Dublin = 464",
-    //   "London to Belfast = 518",
-    //   "Dublin to Belfast = 141",
-    // ]);
-    // expect(routes.cities, ["London", "Dublin", "Belfast"]);
   });
 
   test("should parse to santa's routes", () {

@@ -6,8 +6,8 @@ import 'day06.dart';
 void main() {
   TypedOutput<LocationPair>(
     day: 9,
-    part1: (entries) => SantaRoutes.fromLocations(entries).shortest,
-    part2: (entries) => SantaRoutes.fromLocations(entries).longest,
+    part1: (entries) => entries.asRoutes().shortest,
+    part2: (entries) => entries.asRoutes().longest,
     pipe: (entries) => entries.map(LocationPair.from).toList(),
   );
 }
@@ -68,26 +68,27 @@ class SantaRoutes {
   }
 }
 
-const int maxInteger =  0x7FFFFFFFFFFFFFFF;
+const int maxInteger = 0x7FFFFFFFFFFFFFFF;
 // Held-Karp Algorithm
 Iterable<int> travelingSantaProblem(Map<String, Map<String, int>> ways) {
   final cities = ways.keys.toList(); // All nodes name in the graph
   final allPaths = generatePermutations(cities);
-  return allPaths
-  .map((path) => path.indexed.toList())
-  .map((path) {
-    return path
-      .where((city) => city.$1 < path.length -1 )
-      .map((city) => ways[city.$2]![path[city.$1 + 1]]!)
-      .reduce(plus);
+  return allPaths.map((path) {
+    return path.indexed
+        .where((city) => city.$1 < path.length - 1)
+        .map((city) => ways[city.$2]![path[city.$1 + 1]]!)
+        .reduce(plus);
   });
 }
 
 List<List<T>> generatePermutations<T>(List<T> items) {
   if (items.length <= 1) return [items];
 
-  return items.map((item) {
-    List<T> remaining = List.from(items)..remove(item);
-     return generatePermutations(remaining).map((perm) => [item, ...perm]);
-  }).expand((i) => i).toList();
+  return items
+      .map((item) {
+        List<T> remaining = List.from(items)..remove(item);
+        return generatePermutations(remaining).map((perm) => [item, ...perm]);
+      })
+      .expand((i) => i)
+      .toList();
 }
