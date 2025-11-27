@@ -36,7 +36,7 @@ class TypedOutput<T> {
     final middle = ((width - 8) / 2).floor();
     final separators = List.generate(middle, (_) => '-').join();
 
-    final title = 'DAY ' + (day > 10 ? '' : '0');
+    final title = 'DAY ' + (day >= 10 ? '' : '0');
 
     print('$separators $title$day $separators');
 
