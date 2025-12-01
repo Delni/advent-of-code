@@ -7,5 +7,6 @@ fun main() {
         Day3(),
         Day4(),
         Day5(),
+        Day6(),
     ).forEach(AbstractDay<out Any>::run)
 }
